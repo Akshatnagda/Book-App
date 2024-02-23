@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { VITE_BACKEND_URL } from "../../App";
+
 
 function SingleBook() {
   const [data, setData] = useState([]);
 
   const { slug } = useParams();
 
-  const baseUrl = `http://localhost:8000/api/books/${slug}`;
+  const baseUrl = `${VITE_BACKEND_URL}/api/books/${slug}`;
 
   useEffect(() => {
     const fetchData = async () => {
